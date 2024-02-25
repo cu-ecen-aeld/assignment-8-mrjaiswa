@@ -3,7 +3,8 @@
 module="scull"
 device="scull"
 mode="664"
-
+module2="aesdchar"
+device2="aesdchar"
 case $1 in
     start)
         echo "Loading ldd modules"
@@ -57,6 +58,14 @@ case $1 in
        mknod /dev/${device}priv  c $major 11
        chgrp $group /dev/${device}priv
        chmod $mode  /dev/${device}priv
+       
+      # Added for aesd char driver
+       modprobe ${module2} 
+       rm -f /dev/${device2}
+       mknod /dev/${device2} c $major 0
+       chgrp $group /dev/${device2}
+       chmod $mode  /dev/${device2}
+       
 
         # loading faulty module
         printf "Loading faulty module\n"
@@ -94,7 +103,9 @@ case $1 in
                 rm -f /dev/$element
             fi
         done
-
+	#Added for aesdchar
+        rmmod $module2
+        rm -f /dev/${device2}
         ;;
     *)
         echo "Usage: $0 {start|stop}"
