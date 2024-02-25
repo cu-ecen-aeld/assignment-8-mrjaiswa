@@ -6,7 +6,7 @@
 ##############################################################
 
 #TODO: Fill up the contents below in order to reference your assignment 3 git contents
-AESD_CHAR_DRIVER_VERSION = 3d5aec99514e3db7a139ba699ed5011d86e735b3
+AESD_CHAR_DRIVER_VERSION = 839ff49bdf9c92661030ac45b5415c52ba393f8f
 AESD_CHAR_DRIVER_SITE =  git@github.com:cu-ecen-aeld/assignments-3-and-later-mrjaiswa.git
 AESD_CHAR_DRIVER_SITE_METHOD = git
 AESD_CHAR_DRIVER_GIT_SUBMODULES = YES
