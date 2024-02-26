@@ -1,4 +1,4 @@
 config BR2_PACKAGE_AESD_CHAR_DRIVER
-	bool "aesd-char-driver"
+	bool "aesd-chardriver"
 	help
 	  Device drivers for AESD buildroot assignment 8
