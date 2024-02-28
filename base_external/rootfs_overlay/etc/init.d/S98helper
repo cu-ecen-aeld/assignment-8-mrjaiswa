@@ -14,15 +14,15 @@ while true; do
             echo "Will restart the aesdSocket ..."
 
             ps aux | grep [a]esd
-            kill -9  $(ps aux | grep aesdsocket | grep -v grep | awk '{print $1}') 
+            kill -9  $(ps aux | grep aesdsocket | grep -v grep | awk '{print $1}') & 
             
 	    ps aux | grep [d]rivertest.sh
             ps aux | grep [a]esd
             /usr/bin/aesdchar_unload
 	    
 	    echo "########## Loaded driver Back###########"
-            /usr/bin/aesdchar_load 
-	   usleep 10 
+            #/usr/bin/aesdchar_load 
+	    
 	   echo "########## Starting AESD Back###########" 
             /usr/bin/aesdsocket -d &
            
