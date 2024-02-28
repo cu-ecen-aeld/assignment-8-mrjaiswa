@@ -1,0 +1,40 @@
+#!/bin/sh
+
+TARGET_SCRIPT="drivertest.sh"
+# Add the name of your target script here
+
+echo "Running Monitoring Script"
+while true; do
+    if ! ps aux | grep -q [d]rivertest.sh ; then
+        :
+
+    else
+        # Pause the target script
+        if ps aux | grep -q [d]rivertest.sh  >/dev/null; then
+            echo "Will restart the aesdSocket ..."
+
+            ps aux | grep [d]rivertest.sh
+            ps aux | grep [a]esd
+
+            ps aux | grep [a]esd
+            /etc/init.d/aesdchar_unload
+            /etc/init.d/aesdchar_load
+            /usr/bin/aesdsocket -d
+
+
+
+            ps aux | grep [d]rivertest.sh
+            ps aux | grep [a]esd
+
+
+
+
+        # Resume the target script
+            echo "Resuming execution of the target script..."
+
+            echo "Exiting the monitoring script..."
+            exit
+        fi
+    fi
+    usleep 100000  # Adjust the sleep interval as needed
+done

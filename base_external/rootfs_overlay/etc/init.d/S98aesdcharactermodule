@@ -1,0 +1,16 @@
+#! /bin/sh
+
+case "$1" in
+	start)
+		echo "***********************loading aesdchar driver**************************"
+	        /etc/init.d/aesdchar_load
+		/etc/init.d/S99aesdsocket stop
+		;;
+	stop)
+		echo "***********************unloading aesdchar driver***********************"
+		/etc/init.d/aesdchar_unload
+		;;
+	*)
+		echo "usage: $0 {start|stop}"
+	exit 1
+esac

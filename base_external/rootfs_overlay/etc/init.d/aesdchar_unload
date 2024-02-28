@@ -1,0 +1,13 @@
+#!/bin/sh
+module=aesdchar
+device=aesdchar
+cd `dirname $0`
+# invoke rmmod with all arguments we got
+echo "Killing aesdsocket so that we can unload the driver"
+
+kill $(ps aux | grep aesdsocket | grep -v grep | awk '{print $1}')
+rmmod $module || exit 1
+
+# Remove stale nodes
+
+rm -f /dev/${device}
