@@ -4,7 +4,7 @@ case "$1" in
 	start)
 		echo "***********************loading aesdchar driver**************************"
 	        /etc/init.d/aesdchar_load
-		/etc/init.d/S99aesdsocket stop
+		
 		;;
 	stop)
 		echo "***********************unloading aesdchar driver***********************"

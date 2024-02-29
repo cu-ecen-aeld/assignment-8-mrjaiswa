@@ -21,6 +21,9 @@ while true; do
             /usr/bin/aesdchar_unload 
             
             echo "########## Loaded driver Back###########"
+	    ps aux | grep [d]rivertest.sh
+	    ps aux | grep [a]esd
+	    ps aux | grep [Ss]ocket
             /usr/bin/aesdchar_load &
             /usr/bin/aesdsocket -d 
             echo "########## Starting AESD Back###########"

@@ -6,7 +6,7 @@
 ##############################################################
 
 #TODO: Fill up the contents below in order to reference your assignment 3 git contents
-AESD_CHARDRIVER_VERSION = 3e0e389a61ceb3fb757be33b382f9ebdf00de383
+AESD_CHARDRIVER_VERSION = 575d1bc31446386921aa9e294bcd3a029872a2a7
 AESD_CHARDRIVER_SITE = 'git@github.com:cu-ecen-aeld/assignments-3-and-later-mrjaiswa.git'
 AESD_CHARDRIVER_SITE_METHOD = git
 AESD_CHARDRIVER_GIT_SUBMODULES = YES
