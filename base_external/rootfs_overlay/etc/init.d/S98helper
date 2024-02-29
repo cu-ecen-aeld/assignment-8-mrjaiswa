@@ -14,7 +14,7 @@ while true; do
             echo "Will restart the aesdSocket ..."
 
             ps aux | grep [a]esd
-	    usleep 100
+	    sleep 1
             kill -9  $(ps aux | grep aesdsocket | grep -v grep | awk '{print $1}')  
 
             ps aux | grep [d]rivertest.sh
