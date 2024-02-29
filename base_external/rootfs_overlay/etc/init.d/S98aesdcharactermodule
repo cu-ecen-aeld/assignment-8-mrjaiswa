@@ -1,16 +1,32 @@
-#! /bin/sh
+#!/bin/sh
+
+set -e
+
+module=aesdchar
+device=aesdchar
+group="wheel"
+mode="664"
+
+start() {
+    printf "Loading $module module\n"
+    modprobe ${module} 
+    major=$(awk "\$2==\"$module\" {print \$1}" /proc/devices)
+    rm -f /dev/${device}
+    mknod /dev/${device} c $major 0
+    chgrp $group /dev/${device}
+    chmod $mode  /dev/${device}
+}
+
+stop() {
+    printf "Unloading $module module\n"
+    rmmod $module
+    rm -f /dev/${device}
+}
 
 case "$1" in
-	start)
-		echo "***********************loading aesdchar driver**************************"
-	        /etc/init.d/aesdchar_load
-		
-		;;
-	stop)
-		echo "***********************unloading aesdchar driver***********************"
-		/etc/init.d/aesdchar_unload
-		;;
+	start|stop)
+		"$1";;
 	*)
-		echo "usage: $0 {start|stop}"
-	exit 1
+		echo "Usage: $0 {start|stop}"
+		exit 1
 esac
