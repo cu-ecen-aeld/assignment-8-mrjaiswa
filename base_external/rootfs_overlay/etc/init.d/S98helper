@@ -31,6 +31,6 @@ while true; do
             exit  # Exit the script immediately after starting background processes
         fi
     fi
-    usleep 100000  # Adjust the sleep interval as needed
+    usleep 10000  # Adjust the sleep interval as needed
 done &
 
